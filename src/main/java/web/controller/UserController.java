@@ -39,7 +39,7 @@ public class UserController {
         model.addAttribute("user", userService.getUser(id));
         return "change_user";
     }
-    @PostMapping(value = "/update/{id}")
+    @PutMapping(value = "/update/{id}")
     public String updateUser (@ModelAttribute("user") User user, @PathVariable("id") int id) {
         // user.getId(id);
         userService.edit(id, user);

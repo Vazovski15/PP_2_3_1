@@ -15,11 +15,13 @@ public class UserDaoImpl implements UserDao {
     @Override
     @SuppressWarnings("unchecked")
     public List<User> getAllUsers() {
+
         return entityManager.createQuery("FROM User ", User.class).getResultList();
     }
 
     @Override
     public User getUser(int id) {
+
         return entityManager.find(User.class, id);
     }
 
